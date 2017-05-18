@@ -95,7 +95,7 @@ class Record(object):
         try:
             self.codec = ext_codecs[ext]
         except KeyError:
-            raise self.ExtensionUnsupportedException("Extension .%s unsupported! (supported are %s)" % (ext, ", ".join([".%s" % x for x in list(ext_codecs.keys())])))
+            raise self.ExtensionUnsupportedException("Extension .%s unsupported! (supported are %s)" % (ext, ", ".join([".%s" % x for x in ext_codecs.keys()])))
         self.framerate = framerate
         if self.codec == "mpeg1video":
             assert self.framerate not in [15]
